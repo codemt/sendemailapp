@@ -42,11 +42,7 @@ app.post('/api/form',(req,res)=>{
              pass: 'toxicmetal@2013' // generated ethereal password
              //
          },
-         tls:{
- 
-             rejectUnauthorized : false
- 
-         }
+
      });
 
      // setup email data with unicode symbols
