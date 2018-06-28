@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "start":"concurrently \"npm run server\" \"npm run client\"",
+    "server":"nodemon index.js",
+    "client":"npm run start --prefix client",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "dev":"concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
