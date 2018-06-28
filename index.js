@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}))
 
@@ -15,7 +17,7 @@ app.get('/',(req,res)=>{
 })
 app.post('/api/form',(req,res)=>{
 
-        console.log(req.body); 
+                
         const output = `
     <p> You have a new Contact Request</p>
         <h3> Contact Details </h3>
@@ -67,8 +69,8 @@ app.post('/api/form',(req,res)=>{
         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
         // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
     });
-    
-    res.render('contact',{msg:'Email has been sent.'});
+      // res.send('Hello');
+    res.send('contact',{msg:'Email has been sent.'});
 
 
 })
