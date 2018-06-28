@@ -28,7 +28,7 @@ async submitForm(e){
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
-        const message = e.target.email.value;
+        const message = e.target.message.value;
         console.log(name);
         console.log(email);
         console.log(message);
