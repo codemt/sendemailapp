@@ -33,7 +33,7 @@ app.post('/api/form',(req,res)=>{
      let transporter = nodemailer.createTransport({
 
         //host: 'smtp.ethereal.email',
-        // host: 'mail.google.com',
+         host: 'mail.google.com',
          service : 'gmail',
          port: 587,
          secure: false, // true for 465, false for other ports
@@ -42,7 +42,11 @@ app.post('/api/form',(req,res)=>{
              pass: 'toxicmetal@2013' // generated ethereal password
              //
          },
-
+         tls:{
+ 
+             rejectUnauthorized : false
+ 
+         }
      });
 
      // setup email data with unicode symbols
